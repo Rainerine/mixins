@@ -1,0 +1,18 @@
+//Colours
+$primary:#000;
+$secondary:#000;
+
+//Fonts
+$primaryFont: '';
+$headingFont: '';
+$iconFont: '';
+
+//BreakPoints
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1270px;
+$screen-xxl-min: 1500px;
+
+//Mixins
+@import "mixins";

@@ -1,0 +1,152 @@
+@mixin opacity($percentage) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$percentage * 100})";
+  filter: alpha(opacity=$percentage * 100);
+  -moz-opacity: $percentage;
+  opacity: $percentage;
+
+}
+
+@mixin transition($prop) {
+  -webkit-transition: $prop;
+  -moz-transition: $prop;
+  -o-transition: $prop;
+  transition: $prop;
+}
+
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -ms-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}));
+}
+
+@mixin rotateX($deg) {
+  @include transform(rotateX(#{$deg}));
+}
+
+@mixin rotateY($deg) {
+  @include transform(rotateY(#{$deg}));
+}
+
+@mixin scale($xy) {
+  @include transform(scale($xy));
+}
+
+@mixin scaleX($x) {
+  @include transform(scaleX($x));
+}
+
+@mixin scaleY($y) {
+  @include transform(scaleY($y));
+}
+
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+@mixin skew($x, $y) {
+  @include transform(skew(#{$x}, #{$y}));
+}
+
+@mixin appearance($setting) {
+  -webkit-appearance: $setting;
+  -moz-appearance: $setting;
+  appearance: $setting;
+}
+
+@mixin gradient($direction, $list) {
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);
+}
+
+@mixin box-shadow($value) {
+  -webkit-box-shadow: $value;
+  -moz-box-shadow: $value;
+  box-shadow: $value;
+}
+
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+@mixin filter($filter-type,$filter-amount) {
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+//Responsive Mixins
+@mixin bp($screen-size){
+  @media only screen and (min-width: $screen-size) {
+    @content;
+  }
+}
+@mixin bp-sm() {
+  @media only screen and (min-width: $screen-sm-min) {
+    @content;
+  }
+}
+
+@mixin bp-md {
+  @media only screen and (min-width: $screen-md-min) {
+    @content;
+  }
+}
+
+@mixin bp-lg {
+  @media only screen and (min-width: $screen-lg-min) {
+    @content;
+  }
+}
+
+@mixin bp-xl {
+  @media only screen and (min-width: $screen-xxl-min) {
+    @content;
+  }
+}
+
+@mixin bp-xxl {
+  @media only screen and (min-width: $screen-xxl-min) {
+    @content;
+  }
+}
+@mixin mx-bp($screen-size){
+  @media only screen and (max-width: $screen-size) {
+    @content;
+  }
+}
+@mixin mx-bp-sm {
+  @media only screen and (max-width: $screen-sm-min) {
+    @content;
+  }
+}
+
+@mixin mx-bp-md {
+  @media only screen and (max-width: $screen-md-min) {
+    @content;
+  }
+}
+
+@mixin mx-bp-lg {
+  @media only screen and (max-width: $screen-lg-min) {
+    @content;
+  }
+}
+
+@mixin mx-bp-xl {
+  @media only screen and (max-width: $screen-xxl-min) {
+    @content;
+  }
+}
+
+@mixin mx-bp-xxl {
+  @media only screen and (max-width: $screen-xxl-min) {
+    @content;
+  }
+}
